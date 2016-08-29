@@ -1,0 +1,38 @@
+{
+	"name": "SPARQLEditor",
+	"author": [
+		"Stas Malyshev"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:SPARQLEditor",
+	"descriptionmsg": "sparqleditor-desc",
+	"license-name": "Unlicense",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.28.0"
+	},
+	"Hooks": {
+		"ContentHandlerDefaultModelFor": [
+			"SparqlEditor::onContentHandlerDefaultModelFor"
+		],
+		"ContentHandlerForModelID": [
+			"SparqlEditor::onContentHandlerForModelID"
+		],
+		"CodeEditorGetPageLanguage": [
+			"SparqlEditor::onCodeEditorGetPageLanguage"
+		]
+	},
+	"MessagesDirs": {
+		"SPARQLEditor": [
+			"i18n"
+		]
+	},
+	"config": {
+		"SPARQLEditorNamespaces": [ 0, 2, 8, 12 ]
+	},
+	"AutoloadClasses": {
+		"SparqlEditor": "SparqlEditor.class.php",
+		"SparqlContentHandler": "SparqlContentHandler.php",
+		"SparqlContent": "SparqlContent.php"
+	},
+	"manifest_version": 1
+}
